@@ -68,7 +68,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --staging -d obj-estate.ru -d www.obj-estate.ru
+    command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --force-renewal -d obj-estate.ru -d www.obj-estate.ru
 
 volumes:
   certbot-etc:
