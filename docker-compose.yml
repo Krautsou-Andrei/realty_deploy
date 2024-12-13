@@ -60,7 +60,8 @@ services:
       - "./config/entrypoint.sh:/usr/local/bin/entrypoint.sh"
       - "./map/:/var/www/html/map"
       - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
-      - "./theme/:/var/www/html/wp-content/themes/realty"      
+      - "./theme/:/var/www/html/wp-content/themes/realty"  
+      - "./plugins/:/var/www/html/wp-content/plugins"    
       - "./uploads/:/var/www/html/wp-content/uploads"
     entrypoint: ["/bin/bash", "/usr/local/bin/entrypoint.sh"]
     command: >
@@ -93,7 +94,8 @@ services:
       - "./config/entrypoint.sh:/usr/local/bin/entrypoint.sh"
       - "./map/:/var/www/html/map"
       - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
-      - "./theme/:/var/www/html/wp-content/themes/realty"      
+      - "./theme/:/var/www/html/wp-content/themes/realty" 
+      - "./plugins/:/var/www/html/wp-content/plugins"     
       - "./uploads/:/var/www/html/wp-content/uploads"
       - certbot-etc:/etc/letsencrypt
     networks:
