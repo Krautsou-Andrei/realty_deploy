@@ -81,6 +81,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:     
+      - ./.srv/database:/var/lib/mysql
       - ./nginx-conf:/etc/nginx/conf.d
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
