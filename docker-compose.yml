@@ -9,7 +9,7 @@ services:
     environment:
       - MYSQL_DATABASE=realty
     volumes:
-      - ./.srv/database:/var/lib/mysql
+      - dbdata:/var/lib/mysql
     command: "--default-authentication-plugin=mysql_native_password"
     networks:
       - app-network
@@ -48,7 +48,8 @@ services:
       - WORDPRESS_DEBUG=0
       - WORDPRESS_CACHE=true
       - WORDPRESS_REDIS_HOST=redis
-    volumes:      
+    volumes:
+      - wordpress:/var/www/html
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
       - "./config/get_json.php:/var/www/html/get_json.php"
@@ -59,9 +60,9 @@ services:
       - "./config/entrypoint.sh:/usr/local/bin/entrypoint.sh"
       - "./map/:/var/www/html/map"
       - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
-      - "./theme/:/var/www/html/wp-content/themes/realty"  
-      - "./plugins/:/var/www/html/wp-content/plugins"    
+      - "./theme/:/var/www/html/wp-content/themes/realty"      
       - "./uploads/:/var/www/html/wp-content/uploads"
+      - "./plugins/:/var/www/html/wp-content/plugins"
     networks:
       - app-network
 
@@ -72,10 +73,10 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - "80:80"  
+      - "80:80"
       - "443:443"
-    volumes:     
-      - ./.srv/database:/var/lib/mysql
+    volumes:
+      - wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
@@ -87,9 +88,9 @@ services:
       - "./config/entrypoint.sh:/usr/local/bin/entrypoint.sh"
       - "./map/:/var/www/html/map"
       - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
-      - "./theme/:/var/www/html/wp-content/themes/realty" 
-      - "./plugins/:/var/www/html/wp-content/plugins"     
+      - "./theme/:/var/www/html/wp-content/themes/realty"      
       - "./uploads/:/var/www/html/wp-content/uploads"
+      - "./plugins/:/var/www/html/wp-content/plugins"
       - certbot-etc:/etc/letsencrypt
     networks:
       - app-network
@@ -114,15 +115,18 @@ services:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt      
+      - certbot-etc:/etc/letsencrypt
+      - wordpress:/var/www/html
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
       - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini"
       - "./theme/:/var/www/html/wp-content/themes/realty"
-    command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --force-renewal -d obj-estate.ru -d www.obj-estate.ru
+    command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --staging -d obj-estate.ru -d www.obj-estate.ru
 
 volumes:
-  certbot-etc:  
+  certbot-etc:
+  wordpress:
+  dbdata:
 
 networks:
   app-network:
