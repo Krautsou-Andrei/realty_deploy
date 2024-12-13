@@ -46,6 +46,20 @@ services:
     networks:
       - app-network
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_USERNAME: Andrei
+      PMA_HOST: db
+      UPLOAD_LIMIT: 1512M
+    networks:
+      - app-network
+
   certbot:
     depends_on:
       - webserver
