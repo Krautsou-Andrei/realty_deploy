@@ -9,7 +9,7 @@ services:
     environment:
       - MYSQL_DATABASE=realty
     volumes:
-      - dbdata:/var/lib/mysql
+      - ./.srv/database:/var/lib/mysql
     command: "--default-authentication-plugin=mysql_native_password"
     networks:
       - app-network
@@ -48,8 +48,7 @@ services:
       - WORDPRESS_DEBUG=0
       - WORDPRESS_CACHE=true
       - WORDPRESS_REDIS_HOST=redis
-    volumes:
-      - wordpress:/var/www/html
+    volumes:      
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
       - "./config/get_json.php:/var/www/html/get_json.php"
@@ -81,8 +80,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - wordpress:/var/www/html
+    volumes:     
       - ./nginx-conf:/etc/nginx/conf.d
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
@@ -121,8 +119,7 @@ services:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - wordpress:/var/www/html
+      - certbot-etc:/etc/letsencrypt      
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
       - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini"
@@ -130,9 +127,7 @@ services:
     command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --force-renewal -d obj-estate.ru -d www.obj-estate.ru
 
 volumes:
-  certbot-etc:
-  wordpress:
-  dbdata:
+  certbot-etc:  
 
 networks:
   app-network:
