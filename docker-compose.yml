@@ -39,6 +39,7 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
@@ -51,8 +52,7 @@ services:
     depends_on:
       - db
     ports:
-      - "8081:80"
-      - "443:443"
+      - "8081:80"      
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_USERNAME: Andrei
