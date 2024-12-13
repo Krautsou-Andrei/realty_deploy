@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   db:
@@ -10,13 +10,32 @@ services:
       - MYSQL_DATABASE=realty
     volumes:
       - dbdata:/var/lib/mysql
-    command: '--default-authentication-plugin=mysql_native_password'
+    command: "--default-authentication-plugin=mysql_native_password"
+    networks:
+      - app-network
+
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_DATABASES=1
+    command:
+      [
+        "redis-server",
+        "--maxmemory",
+        "1024mb",
+        "--maxmemory-policy",
+        "allkeys-lru",
+      ]
     networks:
       - app-network
 
   wordpress:
     depends_on:
       - db
+      - redis
     image: wordpress:php8.1-fpm
     container_name: wordpress
     restart: unless-stopped
@@ -26,6 +45,9 @@ services:
       - WORDPRESS_DB_USER=$MYSQL_USER
       - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
       - WORDPRESS_DB_NAME=realty
+      - WORDPRESS_DEBUG=0
+      - WORDPRESS_CACHE=true
+      - WORDPRESS_REDIS_HOST=redis
     volumes:
       - wordpress:/var/www/html
     networks:
@@ -52,7 +74,7 @@ services:
     depends_on:
       - db
     ports:
-      - "8081:80"      
+      - "8081:80"
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_USERNAME: Andrei
@@ -78,4 +100,4 @@ volumes:
 
 networks:
   app-network:
-    driver: bridge  
+    driver: bridge
