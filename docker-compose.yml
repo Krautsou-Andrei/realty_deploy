@@ -50,6 +50,18 @@ services:
       - WORDPRESS_REDIS_HOST=redis
     volumes:
       - wordpress:/var/www/html
+      - "./.srv/realty:/var/www/html"
+      - "./assets/:/var/www/html/assets"
+      - "./config/get_json.php:/var/www/html/get_json.php"
+      - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini" 
+      - "./config/critical_error_message_telegram.php:/var/www/html/critical_error_message_telegram.php"
+      - "./config/my_cron_file:/etc/cron.d/my_cron_file"
+      - "./config/cron.log:/var/log/cron.log"
+      - "./config/entrypoint.sh:/usr/local/bin/entrypoint.sh"
+      - "./map/:/var/www/html/map"
+      - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
+      - "./theme/:/var/www/html/wp-content/themes/realty"      
+      - "./uploads/:/var/www/html/wp-content/uploads"
     networks:
       - app-network
 
@@ -65,6 +77,18 @@ services:
     volumes:
       - wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
+      - "./.srv/realty:/var/www/html"
+      - "./assets/:/var/www/html/assets"
+      - "./config/get_json.php:/var/www/html/get_json.php"
+      - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini" 
+      - "./config/critical_error_message_telegram.php:/var/www/html/critical_error_message_telegram.php"
+      - "./config/my_cron_file:/etc/cron.d/my_cron_file"
+      - "./config/cron.log:/var/log/cron.log"
+      - "./config/entrypoint.sh:/usr/local/bin/entrypoint.sh"
+      - "./map/:/var/www/html/map"
+      - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
+      - "./theme/:/var/www/html/wp-content/themes/realty"      
+      - "./uploads/:/var/www/html/wp-content/uploads"
       - certbot-etc:/etc/letsencrypt
     networks:
       - app-network
@@ -91,6 +115,10 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - wordpress:/var/www/html
+      - "./.srv/realty:/var/www/html"
+      - "./assets/:/var/www/html/assets"
+      - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini"
+      - "./theme/:/var/www/html/wp-content/themes/realty"
     command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --force-renewal -d obj-estate.ru -d www.obj-estate.ru
 
 volumes:
