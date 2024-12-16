@@ -4,7 +4,7 @@ services:
   db:
     image: mysql:8.0
     container_name: db
-    restart: unless-stopped
+    restart: always
     env_file: .env
     ports:
       - "127.0.0.1:3307:3306"
@@ -35,7 +35,7 @@ services:
       - redis
     image: wordpress:php8.1-fpm
     container_name: wordpress
-    restart: unless-stopped
+    restart: always
     env_file: .env
     environment:
       - WORDPRESS_DB_HOST=db
@@ -71,7 +71,7 @@ services:
       - wordpress
     image: nginx:latest
     container_name: webserver
-    restart: unless-stopped
+    restart: always
     ports:
       - "80:80"
       - "443:443"
