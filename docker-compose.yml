@@ -59,12 +59,12 @@ services:
       - "./theme/:/var/www/html/wp-content/themes/realty"      
       - "./uploads/:/var/www/html/wp-content/uploads"
       - "./plugins/:/var/www/html/wp-content/plugins"
-    # entrypoint: ["/bin/bash", "/usr/local/bin/entrypoint.sh"]
-    # command: >
-    #   bash -c "apt-get update && apt-get install -y cron &&
-    #   chmod 0644 /etc/cron.d/my_cron_file &&
-    #   crontab /etc/cron.d/my_cron_file &&
-    #   cron && php-fpm"   
+    entrypoint: ["/bin/bash", "/usr/local/bin/entrypoint.sh"]
+    command: >
+      bash -c "apt-get update && apt-get install -y cron &&
+      chmod 0644 /etc/cron.d/my_cron_file &&
+      crontab /etc/cron.d/my_cron_file &&
+      cron && php-fpm"   
 
   webserver:
     depends_on:
