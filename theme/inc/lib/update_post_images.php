@@ -40,7 +40,7 @@ function update_post_images($data, $post_id)
 
         $update_posts_map_images[$post_id] = $meta_data;
 
-        if (count($update_posts_map_images) >= 1000) {
+        if (count($update_posts_map_images) >= 100) {
             update_posts_images_in_db();
         }
     } catch (Exception $e) {
