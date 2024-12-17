@@ -76,7 +76,11 @@ function start($is_continue_load = false)
 
         get_message_server_telegram('Успех', 'Начало загрузки жилых комплексов ' . $key_city_region);
 
+        $count_gk = 0;
+
         foreach ($blocks as $block) {
+            $count_gk++;
+
             $region = search_region($regions, $block->district);
             $region_name = $region->name;
 
@@ -88,6 +92,10 @@ function start($is_continue_load = false)
 
             if (!empty($id_page)) {
                 create_page($id_page, $block, TEMPLATE_NAME::PAGE_GK, $region_name);
+            }
+
+            if ($count_gk % 5 === 0) {
+                sleep(2);
             }
 
             wp_cache_flush();

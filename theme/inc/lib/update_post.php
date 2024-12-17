@@ -34,5 +34,6 @@ function update_post($data, $post_id)
 
     if (count($update_posts_map) >= 100) {
         update_posts_in_db();
+        sleep(2);
     }
 }
