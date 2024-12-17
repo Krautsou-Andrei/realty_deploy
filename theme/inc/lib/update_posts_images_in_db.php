@@ -25,7 +25,10 @@ function update_posts_images_in_db()
         }
 
         $count_images_update = $count_images_update + count($update_posts_map_images);
-        get_message_server_telegram('загружены картинки ' . $count_images_update);
+
+        if ($count_images_update % 1000 === 0 || $count_images_update % 100 !== 0) {
+            get_message_server_telegram('загружены картинки ' . $count_images_update);
+        }
 
         $update_posts_map_images = [];
         sleep(5);
