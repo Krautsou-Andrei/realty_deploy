@@ -1,7 +1,6 @@
 <?php
 function get_post_map($ids_gk_category)
 {
-    global $wpdb;
     $args = [
         'post_type'      => 'post',
         'posts_per_page' => -1, // Получаем все посты
@@ -19,26 +18,10 @@ function get_post_map($ids_gk_category)
 
     $productIdMap = [];
 
-    $post_ids = implode(',', $query); // Преобразуем массив в строку
-
-    $sql = $wpdb->prepare("
-        SELECT post_id, meta_value AS _product_id
-        FROM {$wpdb->postmeta}
-        WHERE meta_key = 'product-id'
-        AND post_id IN ($post_ids)
-    ");
-
-    $productIdMap = $wpdb->get_results($sql, OBJECT_K); // Получаем результаты как ассоциативный массив
-
-    // Преобразуем в нужный формат
-
-    foreach ($productIdMap as $post_id => $data) {
-        $productIdMap[$data->product_id] = $post_id;
+    foreach ($query as $post_id) {
+        $product_id = carbon_get_post_meta($post_id, 'product-id');
+        $productIdMap[$product_id] = $post_id;
     }
-    // foreach ($query as $post_id) {
-    //     $product_id = carbon_get_post_meta($post_id, 'product-id');
-    //     $productIdMap[$product_id] = $post_id;
-    // }
 
     return $productIdMap;
 }
