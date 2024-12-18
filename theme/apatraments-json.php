@@ -310,7 +310,7 @@ function load_post($key_city_region, $region_category_id, $post_map, $is_continu
 function load_image($key_city_region, $post_map)
 {
     $json_folder_path = '/json/' . $key_city_region . '/apartments.json';
-    $items = Items::fromFile($json_folder_path);
+    $items = get_blocks($json_folder_path);
 
     get_message_server_telegram('Успех', 'Начало загрузки картинок для объявлений ' . $key_city_region);
     foreach ($items as $name => $item) {
