@@ -82,6 +82,7 @@ services:
       - "./map/:/var/www/html/map"
       - "./mlsfiles/:/var/www/html/wp-content/mlsfiles"
       - "./uploads/:/var/www/html/wp-content/uploads"
+      - "./theme/:/var/www/html/wp-content/themes/realty"
       - "./plugins/:/var/www/html/wp-content/plugins"
       - certbot-etc:/etc/letsencrypt
 
