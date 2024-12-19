@@ -32,7 +32,7 @@ function update_post($data, $post_id)
 
     $update_posts_map[$post_id] = [$data_update_post_meta, $data_update_post];
 
-    if (count($update_posts_map) >= 100) {
+    if (count($update_posts_map) >= 1000) {
         update_posts_in_db();
         sleep(2);
     }

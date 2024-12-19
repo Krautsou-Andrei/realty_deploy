@@ -129,7 +129,7 @@ function start($is_continue_load = false)
 
         get_message_server_telegram('Успех', 'Начало загрузки объявлений ' . $key_city_region);
 
-        load_post($key_city_region, $region_category_id, $post_map, $is_continue_load, $is_load, $count_post);
+        load_post($key_city_region, $region_category_id, $post_map, $rooms_ids, $building_type_ids, $finishings_ids, $is_continue_load, $is_load, $count_post);
 
         if (!empty($create_posts_map)) {
             insert_posts_in_db();
@@ -252,7 +252,7 @@ function load_gk($key_city_region, $regions, $id_page_krai, $region_category_id,
     }
 }
 
-function load_post($key_city_region, $region_category_id, $post_map, $is_continue_load, &$is_load, &$count_post)
+function load_post($key_city_region, $region_category_id, $post_map, $rooms_ids, $building_type_ids, $finishings_ids, $is_continue_load, &$is_load, &$count_post)
 {
     global $wpdb;
 
