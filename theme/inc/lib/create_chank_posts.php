@@ -63,7 +63,7 @@ function create_chank_posts($data, $region_category_id, $last_post_id = 0)
             'post_name'       => $post_slug,
             'post_modified'   => current_time('mysql'),
             'post_modified_gmt' => current_time('mysql', 1),
-            'guid'            => 'http://localhost:8080/' . $post_slug, // Замените на актуальный URL
+            'guid'            => 'https://obj-estate.ru/' . $post_slug, // Замените на актуальный URL
             'menu_order'      => 0,
             'post_type'       => 'post',
             'comment_count'   => 0,
@@ -109,7 +109,7 @@ function create_chank_posts($data, $region_category_id, $last_post_id = 0)
 
         $create_posts_map[$last_post_id] = [$data_create_post, $meta_data_post, $data_taxonomy];
 
-        if (count($create_posts_map) >= 100) {
+        if (count($create_posts_map) >= 1000) {
             insert_posts_in_db();
             sleep(2);
         }
