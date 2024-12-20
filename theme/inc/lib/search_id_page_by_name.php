@@ -9,6 +9,7 @@ function search_id_page_by_name($post_title, $paren_page, $category_id = null, $
 
     $page_slug = get_transliterate($post_title) . '_' . $paren_page;
     $page_enabled_id = page_exists($page_slug);
+    $category_slug = !empty($category_id) ? trim(get_transliterate($post_title) . '_' . $category_id) : trim(get_transliterate($post_title));
 
     if ($page_enabled_id) {
         return $page_enabled_id;
@@ -28,7 +29,7 @@ function search_id_page_by_name($post_title, $paren_page, $category_id = null, $
             $args_new_page['page_template'] = $template;
         }
 
-        $id_city_category = create_category($post_title, get_transliterate($post_title), $category_id ? $category_id : CATEGORIES_ID::REGIONS);
+        $id_city_category = create_category($post_title, $category_slug, $category_id ? $category_id : CATEGORIES_ID::REGIONS);
 
         $new_page_id = wp_insert_post($args_new_page);
 

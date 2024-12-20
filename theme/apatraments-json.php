@@ -18,6 +18,7 @@ require_once get_template_directory() . '/inc/lib/get_latest_post.php';
 require_once get_template_directory() . '/inc/lib/get_post_map.php';
 require_once get_template_directory() . '/inc/lib/get_transliterate.php';
 require_once get_template_directory() . '/inc/lib/search_id_category_by_name.php';
+require_once get_template_directory() . '/inc/lib/search_id_category_by_slug.php';
 require_once get_template_directory() . '/inc/lib/search_id_page_by_name.php';
 require_once get_template_directory() . '/inc/lib/set_value_gk.php';
 require_once get_template_directory() . '/inc/lib/update_post.php';
@@ -35,19 +36,19 @@ $update_posts_map = [];
 $update_posts_map_images = [];
 $count_images_update = 0;
 
-use JsonMachine\Items;
 use Predis\Client;
 
 function start($is_continue_load = false)
 {
-    global  $names_cities, $image_cache, $category_cache, $wpdb, $create_posts_map, $update_posts_map, $update_posts_map_images, $count_images_update;
+    global  $names_cities, $image_cache, $category_cache, $create_posts_map, $update_posts_map, $update_posts_map_images, $count_images_update;
 
     $category_cache = get_category_map();
     $image_cache = get_images_map();
 
     foreach ($names_cities as $key_city_region => $city_region) {
         $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
-        $region_category_id = search_id_category_by_name($city_region);
+        $category_slug = trim(get_transliterate($city_region));
+        $region_category_id = search_id_category_by_slug($category_slug);
 
         $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
@@ -96,7 +97,8 @@ function start($is_continue_load = false)
 
     foreach ($names_cities as $key_city_region => $city_region) {
         $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
-        $region_category_id = search_id_category_by_name($city_region);
+        $category_slug = trim(get_transliterate($city_region));
+        $region_category_id = search_id_category_by_slug($category_slug);
         $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
         $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
@@ -169,7 +171,8 @@ function start($is_continue_load = false)
     foreach ($names_cities as $key_city_region => $city_region) {
         $count_images_update = 0;
 
-        $region_category_id = search_id_category_by_name($city_region);
+        $category_slug = trim(get_transliterate($city_region));
+        $region_category_id = search_id_category_by_slug($category_slug);
         $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
         $regions_names = array_column($regions, 'name');

@@ -11,7 +11,7 @@ function get_category_map()
 
     if ($categories) {
         foreach ($categories as $category) {
-            $category_map[$category->name] = $category->term_id;
+            $category_map[$category->slug] = $category->term_id;
         }
     }
     return $category_map;
