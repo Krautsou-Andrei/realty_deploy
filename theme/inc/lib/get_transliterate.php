@@ -2,8 +2,8 @@
 
 function get_transliterate($text)
 {
-    // Удаляем все символы, кроме букв и пробелов
-    $text = preg_replace('/[^\p{L}\s]/u', '', $text);
+    // Удаляем все символы, кроме букв, пробелов, цифр, тире и косой черты
+    $text = preg_replace('/[^\p{L}\s0-9\/-]/u', '', $text);
 
     $transliteration_table = [
         'а' => 'a',
@@ -39,7 +39,6 @@ function get_transliterate($text)
         'э' => 'e',
         'ю' => 'yu',
         'я' => 'ya',
-
         'А' => 'A',
         'Б' => 'B',
         'В' => 'V',
@@ -78,8 +77,8 @@ function get_transliterate($text)
     // Транслитерация текста
     $transliterated = strtr($text, $transliteration_table);
 
-    // Замена пробелов на нижние подчеркивания
-    $transliterated = str_replace(' ', '_', $transliterated);
+    // Замена пробелов, тире и косых черт на нижние подчеркивания
+    $transliterated = str_replace([' ', '-', '/'], '_', $transliterated);
 
     return $transliterated;
 }
