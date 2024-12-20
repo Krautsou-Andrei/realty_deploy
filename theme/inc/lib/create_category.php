@@ -6,7 +6,7 @@ function create_category($category_name, $category_slug = '', $parent_id = 0)
     // Проверяем, существует ли категория с таким же именем
     $name = strval($category_name);
     $slug = strval($category_slug);
-    $term_id = $category_cache[$name] ?? false;
+    $term_id = $category_cache[$slug] ?? false;
   
     if (!$term_id) {
         // Создаем новую категорию
@@ -23,7 +23,7 @@ function create_category($category_name, $category_slug = '', $parent_id = 0)
         if (is_wp_error($result)) {
             return $result->get_error_message();
         } else {
-            $category_cache[$name] = $result['term_id'];
+            $category_cache[$slug] = $result['term_id'];
             return $result['term_id']; // Возвращаем ID созданной категории
         }
     } else {     
