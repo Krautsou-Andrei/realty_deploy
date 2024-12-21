@@ -142,8 +142,6 @@ function start($is_continue_load = false)
         }
 
         $post_map = [];
-        gc_collect_cycles();
-        wp_cache_flush();
 
         $rooms_ids = [];
         $rooms = [];
@@ -203,8 +201,6 @@ function start($is_continue_load = false)
         }
 
         $post_map = [];
-        gc_collect_cycles();
-        wp_cache_flush();
 
         sleep(3);
         get_message_server_telegram('Успех', 'Загрузились картинки для объявлений: ' . $key_city_region);
@@ -250,8 +246,6 @@ function load_gk($key_city_region, $regions, $id_page_krai, $region_category_id,
         if (!empty($id_page)) {
             create_page($id_page, $block, TEMPLATE_NAME::PAGE_GK, $region_name);
         }
-
-        wp_cache_flush();
     }
 }
 

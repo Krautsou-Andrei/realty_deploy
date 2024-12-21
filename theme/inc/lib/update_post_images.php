@@ -42,7 +42,7 @@ function update_post_images($data, $post_id)
 
         if (count($update_posts_map_images) >= 100) {
             update_posts_images_in_db();
-            sleep(2);
+            sleep(3);
         }
     } catch (Exception $e) {
         get_message_server_telegram('Ошибка при обновлении картинки объявлений: ');
