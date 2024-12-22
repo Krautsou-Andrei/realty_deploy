@@ -4,7 +4,6 @@ Template Name: JSON Apartaments
 */
 
 declare(strict_types=1);
-require_once get_template_directory() . '/vendor/autoload.php';
 require_once get_template_directory() . '/inc/lib/create_category.php';
 require_once get_template_directory() . '/inc/lib/create_page.php';
 require_once get_template_directory() . '/inc/lib/update_post_images.php';
@@ -36,8 +35,6 @@ $update_posts_map = [];
 $update_posts_map_images = [];
 $count_images_update = 0;
 
-// use Predis\Client;
-
 function start($is_continue_load = false)
 {
     global  $names_cities, $image_cache, $category_cache, $create_posts_map, $update_posts_map, $update_posts_map_images, $count_images_update;
@@ -45,61 +42,63 @@ function start($is_continue_load = false)
     $category_cache = get_category_map();
     $image_cache = get_images_map();
 
-    foreach ($names_cities as $key_city_region => $city_region) {
-        $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
-        $category_slug = trim(get_transliterate($city_region));
-        $region_category_id = search_id_category_by_slug($category_slug);
+    // foreach ($names_cities as $key_city_region => $city_region) {
+    //     $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
 
-        $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
+    //     $category_slug = trim(get_transliterate($city_region));
+    //     $region_category_id = search_id_category_by_slug($category_slug);
 
-        $building_type = convert_json_to_array('/json/' . $key_city_region . '/buildingtypes.json');
-        $building_type_ids = [];
+    //     $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
-        foreach ($building_type as $type) {
-            $building_type_ids[$type->_id] = $type->name;
-        }
+    //     $building_type = convert_json_to_array('/json/' . $key_city_region . '/buildingtypes.json');
+    //     $building_type_ids = [];
 
-        $finishings = convert_json_to_array('/json/' . $key_city_region . '/finishings.json');
-        $finishings_ids = [];
+    //     foreach ($building_type as $type) {
+    //         $building_type_ids[$type->_id] = $type->name;
+    //     }
 
-        foreach ($finishings as $type) {
-            $finishings_ids[$type->_id] = $type->name;
-        }
+    //     $finishings = convert_json_to_array('/json/' . $key_city_region . '/finishings.json');
+    //     $finishings_ids = [];
 
-        $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
-        $rooms_ids = [];
+    //     foreach ($finishings as $type) {
+    //         $finishings_ids[$type->_id] = $type->name;
+    //     }
 
-        foreach ($rooms as $room) {
-            $rooms_ids[$room->crm_id] = $room->name_one;
-        }
+    //     $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
+    //     $rooms_ids = [];
 
-        get_message_server_telegram('Успех', 'Начало загрузки жилых комплексов ' . $key_city_region);
+    //     foreach ($rooms as $room) {
+    //         $rooms_ids[$room->crm_id] = $room->name_one;
+    //     }
 
-        $count_gk = 0;
+    //     get_message_server_telegram('Успех', 'Начало загрузки жилых комплексов ' . $key_city_region);
 
-        load_gk($key_city_region, $regions, $id_page_krai, $region_category_id, $count_gk);
+    //     $count_gk = 0;
 
-        get_message_server_telegram('Успех', 'Загрузились жилые комплексы городов: ' . $key_city_region . ' в количестве: ' . $count_gk);
+    //     load_gk($key_city_region, $regions, $id_page_krai, $region_category_id, $count_gk);
 
-        $rooms_ids = [];
-        $rooms = [];
-        $finishings = [];
-        $finishings_ids = [];
-        $building_type = [];
-        $building_type_ids = [];
-        $regions = [];
+    //     get_message_server_telegram('Успех', 'Загрузились жилые комплексы городов: ' . $key_city_region . ' в количестве: ' . $count_gk);
 
-        sleep(5);
-    }
+    //     $rooms_ids = [];
+    //     $rooms = [];
+    //     $finishings = [];
+    //     $finishings_ids = [];
+    //     $building_type = [];
+    //     $building_type_ids = [];
+    //     $regions = [];
 
-    // clearCache();
+    //     sleep(5);
+    // }
+    
     $is_load = false;
 
     foreach ($names_cities as $key_city_region => $city_region) {
         $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
+
         $category_slug = trim(get_transliterate($city_region));
         $region_category_id = search_id_category_by_slug($category_slug);
-        $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
+
+        // $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
         $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
         $rooms_ids = [];
@@ -108,24 +107,24 @@ function start($is_continue_load = false)
             $rooms_ids[$room->crm_id] = $room->name_one;
         }
 
-        $regions_names = array_column($regions, 'name');
+        // $regions_names = array_column($regions, 'name');
 
-        $args_cities = array(
-            'hide_empty' => false,
-            'parent' => $region_category_id ?? 0,
-        );
+        // $args_cities = array(
+        //     'hide_empty' => false,
+        //     'parent' => $region_category_id ?? 0,
+        // );
 
-        $categories_cities = get_categories($args_cities);
+        // $categories_cities = get_categories($args_cities);
 
-        $search_categories_cities = [];
+        // $search_categories_cities = [];
 
-        foreach ($categories_cities as $category_city) {
-            if (in_array($category_city->name, $regions_names)) {
-                $search_categories_cities[] = $category_city->term_id;
-            }
-        }
+        // foreach ($categories_cities as $category_city) {
+        //     if (in_array($category_city->name, $regions_names)) {
+        //         $search_categories_cities[] = $category_city->term_id;
+        //     }
+        // }
 
-        $post_map = get_post_map($search_categories_cities);
+        $post_map = get_post_map([$region_category_id]);
 
         $count_post = 0;
 
@@ -145,13 +144,13 @@ function start($is_continue_load = false)
 
         $rooms_ids = [];
         $rooms = [];
-        $regions = [];
+        // $regions = [];
 
         if ($is_load) {
             get_message_server_telegram('Успех', 'Начало обновления цены ' . $key_city_region);
 
             $gk_map = get_gk_map($id_page_krai);
-            $post_map_categories = get_post_map_category($search_categories_cities);
+            $post_map_categories = get_post_map_category([$region_category_id]);
 
             foreach ($gk_map as $gk_id) {
                 set_value_gk($gk_id, $post_map_categories);
@@ -163,34 +162,34 @@ function start($is_continue_load = false)
         sleep(3);
         get_message_server_telegram('Успех', 'Загрузились объявления: ' . $key_city_region . ' в количестве: ' . $count_post);
         sleep(5);
-    }
-    // clearCache();
+    }    
 
     foreach ($names_cities as $key_city_region => $city_region) {
         $count_images_update = 0;
 
         $category_slug = trim(get_transliterate($city_region));
         $region_category_id = search_id_category_by_slug($category_slug);
-        $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
-        $regions_names = array_column($regions, 'name');
+        // $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
-        $args_cities = array(
-            'hide_empty' => false,
-            'parent' => $region_category_id ?? 0,
-        );
+        // $regions_names = array_column($regions, 'name');
 
-        $categories_cities = get_categories($args_cities);
+        // $args_cities = array(
+        //     'hide_empty' => false,
+        //     'parent' => $region_category_id ?? 0,
+        // );
 
-        $search_categories_cities = [];
+        // $categories_cities = get_categories($args_cities);
 
-        foreach ($categories_cities as $category_city) {
-            if (in_array($category_city->name, $regions_names)) {
-                $search_categories_cities[] = $category_city->term_id;
-            }
-        }
+        // $search_categories_cities = [];
 
-        $post_map = get_post_map_no_image($search_categories_cities);
+        // foreach ($categories_cities as $category_city) {
+        //     if (in_array($category_city->name, $regions_names)) {
+        //         $search_categories_cities[] = $category_city->term_id;
+        //     }
+        // }
+
+        $post_map = get_post_map_no_image([$region_category_id]);
 
         if (!empty($post_map)) {
             load_image($key_city_region, $post_map);
@@ -210,8 +209,7 @@ function start($is_continue_load = false)
     sleep(10);
     get_message_server_telegram('Успех', 'Загрузились все объявления');
 
-    sleep(10);
-    // clearCache();
+    sleep(10);    
 }
 
 function search_region($regions, $search_id)
@@ -355,22 +353,6 @@ function convert_json_to_array($path_json)
 
     return $current_array ?? [];
 }
-
-// function clearCache()
-// {
-//     $client = new Client([
-//         'scheme' => 'tcp',
-//         'host'   => getenv('WORDPRESS_REDIS_HOST'),
-//         'port'   => 6379,
-//     ]);
-
-//     try {
-//         $client->flushall();
-//         echo 'Кеш Redis успешно сброшен.<br>';
-//     } catch (Exception $e) {
-//         echo 'Ошибка: ' . $e->getMessage();
-//     }
-// }
 
 function prettyVarDump($data)
 {
