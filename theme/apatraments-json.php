@@ -89,7 +89,7 @@ function start($is_continue_load = false)
 
     //     sleep(5);
     // }
-    
+
     $is_load = false;
 
     foreach ($names_cities as $key_city_region => $city_region) {
@@ -105,6 +105,20 @@ function start($is_continue_load = false)
 
         foreach ($rooms as $room) {
             $rooms_ids[$room->crm_id] = $room->name_one;
+        }
+
+        $building_type = convert_json_to_array('/json/' . $key_city_region . '/buildingtypes.json');
+        $building_type_ids = [];
+
+        foreach ($building_type as $type) {
+            $building_type_ids[$type->_id] = $type->name;
+        }
+
+        $finishings = convert_json_to_array('/json/' . $key_city_region . '/finishings.json');
+        $finishings_ids = [];
+
+        foreach ($finishings as $type) {
+            $finishings_ids[$type->_id] = $type->name;
         }
 
         // $regions_names = array_column($regions, 'name');
@@ -162,7 +176,7 @@ function start($is_continue_load = false)
         sleep(3);
         get_message_server_telegram('Успех', 'Загрузились объявления: ' . $key_city_region . ' в количестве: ' . $count_post);
         sleep(5);
-    }    
+    }
 
     foreach ($names_cities as $key_city_region => $city_region) {
         $count_images_update = 0;
@@ -209,7 +223,7 @@ function start($is_continue_load = false)
     sleep(10);
     get_message_server_telegram('Успех', 'Загрузились все объявления');
 
-    sleep(10);    
+    sleep(10);
 }
 
 function search_region($regions, $search_id)
