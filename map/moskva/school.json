@@ -1,0 +1,458 @@
+{
+  "error": null,
+  "data": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.776426, 44.689681] },
+        "id": 735859,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-338754/\">Средняя общеобразовательная школа № 33</a>\n  </div>\n  <div class=\"ballon-address\">ул. Героев Десантников, 51А, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 63-55-97\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 63-55-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 33"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.787164, 44.688096] },
+        "id": 2648345,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-101005/\">Средняя общеобразовательная школа № 10</a>\n  </div>\n  <div class=\"ballon-address\">ул. Героев Десантников, 13, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 71-39-10\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 71-39-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 10"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.784955, 44.688509] },
+        "id": 651939,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/litsej-morskoj-tehnicheskij/\">Морской технический лицей</a>\n  </div>\n  <div class=\"ballon-address\">ул. Героев Десантников, 29А, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 71-18-34\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 71-18-</div>\n  </a>\n</div>",
+          "clusterCaption": "Морской технический лицей"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.772834, 44.689291] },
+        "id": 795689,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-197421/\">Средняя общеобразовательная школа № 19</a>\n  </div>\n  <div class=\"ballon-address\">ул. Героев Десантников, 67, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 63-43-05\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 63-43-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 19"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.783166, 44.676697] },
+        "id": 2598448,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/nachalnaya-shkola-1113133/\">МБОУ СОШ № 11</a>\n  </div>\n  <div class=\"ballon-address\">Южная ул., 6А, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (989) 767-89-79\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (989) 767-89-</div>\n  </a>\n</div>",
+          "clusterCaption": "МБОУ СОШ № 11"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.765069, 44.687978] },
+        "id": 275230,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-126320/\">Средняя общеобразовательная школа № 12 имени М. П. Лазарева</a>\n  </div>\n  <div class=\"ballon-address\">ул. Золотаревского, 6, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 22-13-44\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 22-13-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 12 имени М. П. Лазарева"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.762925, 44.719001] },
+        "id": 371526,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/srednyaya-shkola-21-im-as-pushkina/\">Средняя образовательная школа № 21 имени А. С. Пушкина</a>\n  </div>\n  <div class=\"ballon-address\">ул. Гладкова, 3, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 61-42-64\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 61-42-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя образовательная школа № 21 имени А. С. Пушкина"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.775254, 44.739472] },
+        "id": 7227258,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/gimnaziya-77489/\">Гимназия № 7</a>\n  </div>\n  <div class=\"ballon-address\">ул. Шаумяна, 5, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 26-55-68\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 26-55-</div>\n  </a>\n</div>",
+          "clusterCaption": "Гимназия № 7"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.782749, 44.740268] },
+        "id": 333578,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-324079/\">Средняя общеобразовательная школа № 32</a>\n  </div>\n  <div class=\"ballon-address\">Первомайская ул., 7А, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 26-52-53\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 26-52-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 32"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.814313, 44.731615] },
+        "id": 36816,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/osnovnaya-obscheobrazovatelnaya-shkola-1641443/\">Средняя общеобразовательная школа № 16</a>\n  </div>\n  <div class=\"ballon-address\">Сухумское ш., 82, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 76-12-45\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 76-12-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 16"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.772902, 44.745139] },
+        "id": 409251,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/srednyaya-shkola-17/\">Средняя общеобразовательная школа № 17</a>\n  </div>\n  <div class=\"ballon-address\">ул. Менжинского, 52, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 26-56-54\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 26-56-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 17"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.761629, 44.658813] },
+        "id": 352871,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/mbou-srednyaya-shkola-27/\">Средняя общеобразовательная школа № 27</a>\n  </div>\n  <div class=\"ballon-address\">Школьная ул., 5, село Мысхако</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 71-85-54\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 71-85-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 27"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.807032, 44.680342] },
+        "id": 3978604,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/vindserfing-sapserfing/\">Норд-Ост</a>\n  </div>\n  <div class=\"ballon-address\">Краснодарский край, Новороссийск, Южный район, проспект Ленина, пляж Суджукская коса</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (988) 337-12-59\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (988) 337-12-</div>\n  </a>\n</div>",
+          "clusterCaption": "Норд-Ост"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.78599, 44.67855] },
+        "id": 764142,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/detsko-yunosheskie-tsentryi/piat-zvezd/\">Детская академия Пять Звезд</a>\n  </div>\n  <div class=\"ballon-address\">Пионерская ул., 23А, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (918) 644-07-16\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (918) 644-07-</div>\n  </a>\n</div>",
+          "clusterCaption": "Детская академия Пять Звезд"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.765707, 44.713682] },
+        "id": 1013192,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/gimnaziya--69505/\">Гимназия № 6</a>\n  </div>\n  <div class=\"ballon-address\">Краснодарский край, Новороссийск, улица Яковлева</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 64-51-16\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 64-51-</div>\n  </a>\n</div>",
+          "clusterCaption": "Гимназия № 6"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.752404, 44.728046] },
+        "id": 481079,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-405419/\">Средняя общеобразовательная школа № 40 имени М. К. Видова</a>\n  </div>\n  <div class=\"ballon-address\">ул. Видова, 109, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 21-17-06\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 21-17-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 40 имени М. К. Видова"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.769599, 44.720949] },
+        "id": 183392,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/gbou-novorossijskij-kazachij-kadetskij-korpus-krasnodarskogo-kraya/\">Новороссийский казачий кадетский корпус Краснодарского края</a>\n  </div>\n  <div class=\"ballon-address\">Коммунистическая ул., 11, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 64-45-74\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 64-45-</div>\n  </a>\n</div>",
+          "clusterCaption": "Новороссийский казачий кадетский корпус Краснодарского края"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.728867, 44.756048] },
+        "id": 3296871,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/srednyaya-obscheobrazovatelnaya-shkola-2885646/\">Средняя школа № 28, начальная школа</a>\n  </div>\n  <div class=\"ballon-address\">ул. Свободы, 1, территория Цемдолина, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 76-94-82\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 76-94-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя школа № 28, начальная школа"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.766781, 44.743796] },
+        "id": 481759,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola--181549/\">Школа № 18</a>\n  </div>\n  <div class=\"ballon-address\">Мефодиевская ул., 15, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 27-33-08\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 27-33-</div>\n  </a>\n</div>",
+          "clusterCaption": "Школа № 18"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.644787, 44.712279] },
+        "id": 4337546,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/osnovnaia-obshcheobrazovatelnaia-shkola-no-31-gorod-novorossiisk/\">Основная общеобразовательная школа № 31</a>\n  </div>\n  <div class=\"ballon-address\">ул. Чехова, 1, село Глебовское</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 67-66-12\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 67-66-</div>\n  </a>\n</div>",
+          "clusterCaption": "Основная общеобразовательная школа № 31"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.774686, 44.685091] },
+        "id": 210741,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-297075/\">Школа № 29</a>\n  </div>\n  <div class=\"ballon-address\">Волгоградская ул., 46, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 22-37-09\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 22-37-</div>\n  </a>\n</div>",
+          "clusterCaption": "Школа № 29"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.769424, 44.705476] },
+        "id": 1063942,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/gimnaziya-82763/\">Гимназия 8</a>\n  </div>\n  <div class=\"ballon-address\">Мысхакское ш., 21/23, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 64-48-19\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 64-48-</div>\n  </a>\n</div>",
+          "clusterCaption": "Гимназия 8"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.785774, 44.703792] },
+        "id": 752163,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/srednyaya-shkola-221051/\">Средняя общеобразовательная школа № 22</a>\n  </div>\n  <div class=\"ballon-address\">Суворовская ул., 5, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 61-85-85\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 61-85-</div>\n  </a>\n</div>",
+          "clusterCaption": "Средняя общеобразовательная школа № 22"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.781733, 44.710506] },
+        "id": 5797681,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola/\">Новороссийская морская школа им. М. М. Корницкого</a>\n  </div>\n  <div class=\"ballon-address\">ул. Толстого, 4, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 71-99-39\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 71-99-</div>\n  </a>\n</div>",
+          "clusterCaption": "Новороссийская морская школа им. М. М. Корницкого"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.722551, 44.753876] },
+        "id": 3659810,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/srednyaya-obscheobrazovatelnaya-shkola-283290/\">МАОУ Средняя общеобразовательная школа № 28</a>\n  </div>\n  <div class=\"ballon-address\">Школьная ул., 33, территория Цемдолина, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 26-31-26\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 26-31-</div>\n  </a>\n</div>",
+          "clusterCaption": "МАОУ Средняя общеобразовательная школа № 28"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.729234, 44.740526] },
+        "id": 5968406,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/sredniaia-obshcheobrazovatelnaia-shkola-no-34-g-novorossiisk/\">Школа № 34</a>\n  </div>\n  <div class=\"ballon-address\">ул. Видова, 155, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 79-90-98\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 79-90-</div>\n  </a>\n</div>",
+          "clusterCaption": "Школа № 34"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.752363, 44.728809] },
+        "id": 3664965,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/gosudarstvennoe-byudzhetnoe-obscheobrazovatelnoe-uchrezhdenie-krasnodarskogo-kraya-spetsialnaya-korrektsionnaya-shkola-9-goroda-novorossijska/\">Специальная коррекционная школа № 9 VIII вида</a>\n  </div>\n  <div class=\"ballon-address\">ул. Козлова, 76, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 21-01-46\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 21-01-</div>\n  </a>\n</div>",
+          "clusterCaption": "Специальная коррекционная школа № 9 VIII вида"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.826616, 44.725412] },
+        "id": 2707664,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/mbou-oosh-15/\">Основная общеобразовательная школа № 15 имени Е. Я. Савицкого</a>\n  </div>\n  <div class=\"ballon-address\">Пенайская ул., 3, Новороссийск</div>\n</div>",
+          "clusterCaption": "Основная общеобразовательная школа № 15 имени Е. Я. Савицкого"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.784013, 44.673302] },
+        "id": 14782708,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/mbou-sredniaia-obshcheobrazovatelnaia-shkola-no-11-munitsipalnogo-obrazovaniia-gorod-novorossiisk/\">МБОУ средняя общеобразовательная школа № 11 муниципального образования город Новороссийск</a>\n  </div>\n  <div class=\"ballon-address\">ул. Мурата Ахеджака, 10, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (989) 767-89-79\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (989) 767-89-</div>\n  </a>\n</div>",
+          "clusterCaption": "МБОУ средняя общеобразовательная школа № 11 муниципального образования город Новороссийск"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.774649, 44.684901] },
+        "id": 543564,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/gimnaziia-no-6/\">Гимназия № 6</a>\n  </div>\n  <div class=\"ballon-address\">Волгоградская ул., 46, Новороссийск</div>\n</div>",
+          "clusterCaption": "Гимназия № 6"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.783365, 44.676499] },
+        "id": 1424981,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola--113006/\">Школа № 11</a>\n  </div>\n  <div class=\"ballon-address\">Краснодарский край, Новороссийск, Южная улица</div>\n</div>",
+          "clusterCaption": "Школа № 11"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.826547, 44.725961] },
+        "id": 5097888,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/osnovnaia-obshcheobrazovatelnaia-shkola-no-15-imeni-dvazhdy-geroia-sovetskogo-soiuza/\">Основная общеобразовательная школа № 15 имени дважды Героя Советского Союза</a>\n  </div>\n  <div class=\"ballon-address\">Просечная ул., 10, Новороссийск</div>\n</div>",
+          "clusterCaption": "Основная общеобразовательная школа № 15 имени дважды Героя Советского Союза"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.732018, 44.737839] },
+        "id": 6722143,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/kursy-angliiskogo-iazyka-bazis/\">Курсы английского языка Базис</a>\n  </div>\n  <div class=\"ballon-address\">Тобольская ул., 7, Новороссийск</div>\n</div>",
+          "clusterCaption": "Курсы английского языка Базис"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.729234, 44.740526] },
+        "id": 9550048,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-innovatsii-traditsii-i-uspekha/\">Школа инноваций, традиций и успеха!</a>\n  </div>\n  <div class=\"ballon-address\">ул. Видова, 155, Новороссийск</div>\n</div>",
+          "clusterCaption": "Школа инноваций, традиций и успеха!"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.768193, 44.718474] },
+        "id": 8593433,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/vokalnaya-shkola-studiya-blackorpheus/\">Вокальная школа-студия BlackOrpheus</a>\n  </div>\n  <div class=\"ballon-address\">Краснодарский край, Новороссийск, ул. Свободы, 28</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (918) 469-21-59\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (918) 469-21-</div>\n  </a>\n</div>",
+          "clusterCaption": "Вокальная школа-студия BlackOrpheus"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.782323, 44.74058] },
+        "id": 272116,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-no-32-sredniaia/\">Школа № 32, Средняя</a>\n  </div>\n  <div class=\"ballon-address\">Первомайская ул., 7, Новороссийск</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 27-86-41\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 27-86-</div>\n  </a>\n</div>",
+          "clusterCaption": "Школа № 32, Средняя"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.785144, 44.739843] },
+        "id": 8595461,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/mkou-vsosh-1-mo-g-novorossijsk/\">МКОУ ВсОШ № 1 МО г. Новороссийск</a>\n  </div>\n  <div class=\"ballon-address\">Краснодарский край, Новороссийск г., ул. Сакко и Ванцетти, 11</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (861) 726-51-28\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (861) 726-51-</div>\n  </a>\n</div>",
+          "clusterCaption": "МКОУ ВсОШ № 1 МО г. Новороссийск"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.725164, 44.746214] },
+        "id": 8594083,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/nachalnaya-shkola-24/\">Начальная школа № 24</a>\n  </div>\n  <div class=\"ballon-address\">Краснодарский край, Новороссийск г., ул. Ленина, 8</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 27-03-02\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 27-03-</div>\n  </a>\n</div>",
+          "clusterCaption": "Начальная школа № 24"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.769756, 44.692368] },
+        "id": 8593978,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/avtoshkola-ekstrimavto/\">автошкола «ЭкстримАвто»</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, улица Куникова, 47</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (8617) 63-34-66, +7 (988) 765-55-94\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (8617) 63-34-66, +7 (988) 765-55-</div>\n  </a>\n</div>",
+          "clusterCaption": "автошкола «ЭкстримАвто»"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.785153, 44.739773] },
+        "id": 8593298,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola--1-vechernyaya/\">школа № 1 (вечерняя)</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, улица Сакко и Ванцетти, 11</div>\n  <a href=\"#\" class=\"ballon-phone ballon-phone-open\" onclick=\"openMapPhone(this); return false;\" data-phone=\"+7 (617) 26-51-28\" title=\"Телефон\">\n    <div class=\"ballon-phone-number\">+7 (617) 26-51-</div>\n  </a>\n</div>",
+          "clusterCaption": "школа № 1 (вечерняя)"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.781677, 44.710602] },
+        "id": 8593972,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/morskaya-shkola-im-kornitskogo/\">морская школа им. Корницкого</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, улица Толстого, 4</div>\n</div>",
+          "clusterCaption": "морская школа им. Корницкого"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.82661, 44.725404] },
+        "id": 8593973,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola-155655/\">школа №15</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, Сухумское шоссе</div>\n</div>",
+          "clusterCaption": "школа №15"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.728847, 44.755988] },
+        "id": 8593426,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola--284613/\">школа № 28</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, Школьная улица</div>\n</div>",
+          "clusterCaption": "школа № 28"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.722442, 44.75387] },
+        "id": 8593704,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/shkola--288972/\">школа № 28</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, Школьная улица, 33</div>\n</div>",
+          "clusterCaption": "школа № 28"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      },
+      {
+        "type": "Feature",
+        "geometry": { "type": "Point", "coordinates": [37.753173, 44.729893] },
+        "id": 8593974,
+        "properties": {
+          "balloonContent": "<div class=\"ballon\">\n  <div class=\"ballon-head\">\n      <a href=\"https://novorossijsk.jsprav.ru/shkolyi/muzyikalnaya-shkola--22871/\">музыкальная школа № 2</a>\n  </div>\n  <div class=\"ballon-address\">Новороссийск, Анапское шоссе, 54А</div>\n</div>",
+          "clusterCaption": "музыкальная школа № 2"
+        },
+        "options": { "preset": "islands#darkBlueDotIcon" }
+      }
+    ]
+  }
+}

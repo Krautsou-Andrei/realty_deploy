@@ -13,26 +13,26 @@ services:
     volumes:
       - ./.srv/database:/var/lib/mysql
 
-  redis:
-    image: redis:alpine
-    restart: always
-    ports:
-      - "6379:6379"
-    environment:
-      - REDIS_DATABASES=1
-    command:
-      [
-        "redis-server",
-        "--maxmemory",
-        "1024mb",
-        "--maxmemory-policy",
-        "allkeys-lru",
-      ]
+  # redis:
+  #   image: redis:alpine
+  #   restart: always
+  #   ports:
+  #     - "6379:6379"
+  #   environment:
+  #     - REDIS_DATABASES=1
+  #   command:
+  #     [
+  #       "redis-server",
+  #       "--maxmemory",
+  #       "1024mb",
+  #       "--maxmemory-policy",
+  #       "allkeys-lru",
+  #     ]
 
   wordpress:
     depends_on:
       - db
-      - redis
+      # - redis
     image: wordpress:php8.1-fpm
     container_name: wordpress
     restart: always
@@ -43,8 +43,8 @@ services:
       - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
       - WORDPRESS_DB_NAME=realty
       - WORDPRESS_DEBUG=0
-      - WORDPRESS_CACHE=true
-      - WORDPRESS_REDIS_HOST=redis
+      # - WORDPRESS_CACHE=true
+      # - WORDPRESS_REDIS_HOST=redis
     volumes:
       - "./.srv/realty:/var/www/html"
       - "./assets/:/var/www/html/assets"
