@@ -36,7 +36,7 @@ $update_posts_map = [];
 $update_posts_map_images = [];
 $count_images_update = 0;
 
-use Predis\Client;
+// use Predis\Client;
 
 function start($is_continue_load = false)
 {
@@ -92,7 +92,7 @@ function start($is_continue_load = false)
         sleep(5);
     }
 
-    clearCache();
+    // clearCache();
     $is_load = false;
 
     foreach ($names_cities as $key_city_region => $city_region) {
@@ -164,7 +164,7 @@ function start($is_continue_load = false)
         get_message_server_telegram('Успех', 'Загрузились объявления: ' . $key_city_region . ' в количестве: ' . $count_post);
         sleep(5);
     }
-    clearCache();
+    // clearCache();
 
     foreach ($names_cities as $key_city_region => $city_region) {
         $count_images_update = 0;
@@ -211,7 +211,7 @@ function start($is_continue_load = false)
     get_message_server_telegram('Успех', 'Загрузились все объявления');
 
     sleep(10);
-    clearCache();
+    // clearCache();
 }
 
 function search_region($regions, $search_id)
@@ -356,21 +356,21 @@ function convert_json_to_array($path_json)
     return $current_array ?? [];
 }
 
-function clearCache()
-{
-    $client = new Client([
-        'scheme' => 'tcp',
-        'host'   => getenv('WORDPRESS_REDIS_HOST'),
-        'port'   => 6379,
-    ]);
+// function clearCache()
+// {
+//     $client = new Client([
+//         'scheme' => 'tcp',
+//         'host'   => getenv('WORDPRESS_REDIS_HOST'),
+//         'port'   => 6379,
+//     ]);
 
-    try {
-        $client->flushall();
-        echo 'Кеш Redis успешно сброшен.<br>';
-    } catch (Exception $e) {
-        echo 'Ошибка: ' . $e->getMessage();
-    }
-}
+//     try {
+//         $client->flushall();
+//         echo 'Кеш Redis успешно сброшен.<br>';
+//     } catch (Exception $e) {
+//         echo 'Ошибка: ' . $e->getMessage();
+//     }
+// }
 
 function prettyVarDump($data)
 {
