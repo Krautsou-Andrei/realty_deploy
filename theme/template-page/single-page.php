@@ -80,9 +80,8 @@ require_once get_template_directory() . '/inc/lib/get_image_url.php';
                 'coordinates_center' => [$product_latitude, $product_longitude],
               ];
 
-              ?>
-              <?php $referer = wp_get_referer() ?>
-              <a class="button-back" href="<?php echo esc_url($referer) ?>" aria-label="Назад"></a>
+              ?>             
+              <a class="button-back" href="javascript:void(0);" onclick="window.history.back();" aria-label="Назад"></a>
               <h1 class=" title--xl title--catalog title--singe-page"><?php echo $product_title ?></h1>
             </div>
             <p class="single-page__subtitle"><?php echo $product_city . (!empty($product_sub_locality) ? ", " . $product_sub_locality : '') .  (!empty($product_street) ? ", " . $product_street : ''); ?>

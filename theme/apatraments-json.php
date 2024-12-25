@@ -42,53 +42,53 @@ function start($is_continue_load = false)
     $category_cache = get_category_map();
     $image_cache = get_images_map();
 
-    // foreach ($names_cities as $key_city_region => $city_region) {
-    //     $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
+    foreach ($names_cities as $key_city_region => $city_region) {
+        $id_page_krai = search_id_page_by_name($city_region, CATEGORIES_ID::PAGE_NEW_BUILDINGS, null, TEMPLATE_NAME::REGION, true);
 
-    //     $category_slug = trim(get_transliterate($city_region));
-    //     $region_category_id = search_id_category_by_slug($category_slug);
+        $category_slug = trim(get_transliterate($city_region));
+        $region_category_id = search_id_category_by_slug($category_slug);
 
-    //     $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
+        $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
 
-    //     $building_type = convert_json_to_array('/json/' . $key_city_region . '/buildingtypes.json');
-    //     $building_type_ids = [];
+        $building_type = convert_json_to_array('/json/' . $key_city_region . '/buildingtypes.json');
+        $building_type_ids = [];
 
-    //     foreach ($building_type as $type) {
-    //         $building_type_ids[$type->_id] = $type->name;
-    //     }
+        foreach ($building_type as $type) {
+            $building_type_ids[$type->_id] = $type->name;
+        }
 
-    //     $finishings = convert_json_to_array('/json/' . $key_city_region . '/finishings.json');
-    //     $finishings_ids = [];
+        $finishings = convert_json_to_array('/json/' . $key_city_region . '/finishings.json');
+        $finishings_ids = [];
 
-    //     foreach ($finishings as $type) {
-    //         $finishings_ids[$type->_id] = $type->name;
-    //     }
+        foreach ($finishings as $type) {
+            $finishings_ids[$type->_id] = $type->name;
+        }
 
-    //     $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
-    //     $rooms_ids = [];
+        $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
+        $rooms_ids = [];
 
-    //     foreach ($rooms as $room) {
-    //         $rooms_ids[$room->crm_id] = $room->name_one;
-    //     }
+        foreach ($rooms as $room) {
+            $rooms_ids[$room->crm_id] = $room->name_one;
+        }
 
-    //     get_message_server_telegram('Успех', 'Начало загрузки жилых комплексов ' . $key_city_region);
+        get_message_server_telegram('Успех', 'Начало загрузки жилых комплексов ' . $key_city_region);
 
-    //     $count_gk = 0;
+        $count_gk = 0;
 
-    //     load_gk($key_city_region, $regions, $id_page_krai, $region_category_id, $count_gk);
+        load_gk($key_city_region, $regions, $id_page_krai, $region_category_id, $count_gk);
 
-    //     get_message_server_telegram('Успех', 'Загрузились жилые комплексы городов: ' . $key_city_region . ' в количестве: ' . $count_gk);
+        get_message_server_telegram('Успех', 'Загрузились жилые комплексы городов: ' . $key_city_region . ' в количестве: ' . $count_gk);
 
-    //     $rooms_ids = [];
-    //     $rooms = [];
-    //     $finishings = [];
-    //     $finishings_ids = [];
-    //     $building_type = [];
-    //     $building_type_ids = [];
-    //     $regions = [];
+        $rooms_ids = [];
+        $rooms = [];
+        $finishings = [];
+        $finishings_ids = [];
+        $building_type = [];
+        $building_type_ids = [];
+        $regions = [];
 
-    //     sleep(5);
-    // }
+        sleep(5);
+    }
 
     $is_load = false;
 
@@ -164,7 +164,7 @@ function start($is_continue_load = false)
             get_message_server_telegram('Успех', 'Начало обновления цены ' . $key_city_region);
 
             $gk_map = get_gk_map($id_page_krai);
-            $post_map_categories = get_post_map_category([$region_category_id]);
+            $post_map_categories = get_post_map_category([$region_category_id]);       
 
             foreach ($gk_map as $gk_id) {
                 set_value_gk($gk_id, $post_map_categories);
@@ -204,6 +204,8 @@ function start($is_continue_load = false)
         // }
 
         $post_map = get_post_map_no_image([$region_category_id]);
+
+
 
         if (!empty($post_map)) {
             load_image($key_city_region, $post_map);
