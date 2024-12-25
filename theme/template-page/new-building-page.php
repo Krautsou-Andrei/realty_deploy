@@ -49,9 +49,8 @@ get_header();
       <section class="filter-catalog">
         <div class="filter-catalog__container">
           <div class="filter-catalog-mobile">
-            <div class="filter-catalog-mobile__button">
-              <?php $referer = wp_get_referer() ?>
-              <a class="button-catalog-filter" href="<?php echo esc_url($referer) ?>">
+            <div class="filter-catalog-mobile__button">      
+              <a class="button-catalog-filter" href="javascript:void(0);" onclick="window.history.back();" aria-label="Назад">
                 <img src=" <?php bloginfo('template_url'); ?>/assets/images/back.svg" alt="">
                 <span>Назад </span>
               </a>
