@@ -85,7 +85,7 @@ function get_query_filter_catalog($paged, $region = '', $city = '', $type_build 
 
     $is_view_all_page = carbon_get_post_meta(CATEGORIES_ID::PAGE_NEW_BUILDINGS, 'crb_gk_is_not_all_view');
 
-    if ($is_view_all_page) {
+    if (!$is_view_all_page) {
         $args['meta_query'][] = [
             'key'     => 'crb_gk_min_price_meter',
             'value'   => '',
