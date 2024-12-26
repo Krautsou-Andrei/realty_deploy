@@ -29,7 +29,7 @@ function search_id_page_by_name($post_title, $paren_page, $category_id = null, $
             $args_new_page['page_template'] = $template;
         }
 
-        $id_city_category = create_category($post_title, $category_slug, $category_id ? $category_id : CATEGORIES_ID::REGIONS);
+        $id_city_category = create_category($post_title, strtolower($category_slug), $category_id ? $category_id : CATEGORIES_ID::REGIONS);
 
         $new_page_id = wp_insert_post($args_new_page);
 

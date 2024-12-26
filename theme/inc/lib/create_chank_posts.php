@@ -44,9 +44,9 @@ function create_chank_posts($data, $region_category_id, $last_post_id = 0)
             $date_build = $date->format("Y");
         }
 
-        $id_gk_category = create_category($product_gk, get_transliterate($product_gk) . '_' .  trim(get_transliterate($product_city)), CATEGORIES_ID::GK);
-        $id_city_category = create_category($product_city, trim(get_transliterate($product_city) . '_' . $region_category_id), $region_category_id);
-        $id_rooms_category = create_category(intval($product_rooms) ? intval($product_rooms) : $product_rooms, intval($product_rooms) ? 'rooms_' . intval($product_rooms) : get_transliterate($product_rooms), CATEGORIES_ID::ROOMS);
+        $id_gk_category = create_category($product_gk, strtolower(get_transliterate($product_gk)) . '_' .  trim(strtolower(get_transliterate($product_city))), CATEGORIES_ID::GK);
+        $id_city_category = create_category($product_city, trim(strtolower(get_transliterate($product_city) . '_' . $region_category_id)), $region_category_id);
+        $id_rooms_category = create_category(intval($product_rooms) ? intval($product_rooms) : $product_rooms, intval($product_rooms) ? 'rooms_' . intval($product_rooms) : strtolower(get_transliterate($product_rooms)), CATEGORIES_ID::ROOMS);
         $id_area_category = create_category(ceil($product_area), 'area_' . ceil($product_area), CATEGORIES_ID::AREA);
 
         $title = create_title_post($product_room_id, $product_area, $product_stage);

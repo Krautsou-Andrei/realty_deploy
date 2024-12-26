@@ -4,29 +4,28 @@ function create_category($category_name, $category_slug = '', $parent_id = 0)
 
     global $category_cache;
     // Проверяем, существует ли категория с таким же именем
-    $name = strval($category_name);
-    $slug = strval($category_slug);
-    $term_id = $category_cache[$slug] ?? false;
-  
+
+    $term_id = $category_cache[$category_slug] ?? false;
+
     if (!$term_id) {
         // Создаем новую категорию
         $result = wp_insert_term(
-            $name, // Название категории
+            $category_name, // Название категории
             'category',     // Таксономия
             [
-                'slug' => $slug, // Слаг (необязательно)
+                'slug' => $category_slug, // Слаг (необязательно)
                 'parent' => $parent_id     // ID родительской категории (необязательно)
             ]
         );
-        
+
         // Проверка на ошибки
         if (is_wp_error($result)) {
             return $result->get_error_message();
         } else {
-            $category_cache[$slug] = $result['term_id'];
+            $category_cache[$category_slug] = $result['term_id'];
             return $result['term_id']; // Возвращаем ID созданной категории
         }
-    } else {     
+    } else {
         return $term_id; // Возвращаем ID существующей категории
     }
 }
