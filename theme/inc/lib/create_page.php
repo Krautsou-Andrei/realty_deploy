@@ -13,7 +13,7 @@ function create_page($parent_id, $page, $template, $city_name)
     $page_slug = get_transliterate($page_title) . '_' .  trim(get_transliterate($city_name));
     $page_enabled_id = page_exists($page_slug);
 
-    create_category($page_title, $page_slug, CATEGORIES_ID::GK);
+    create_category($page_title, strtolower($page_slug), CATEGORIES_ID::GK);
 
     $value_exists = false;
 

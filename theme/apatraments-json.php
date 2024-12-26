@@ -98,8 +98,6 @@ function start($is_continue_load = false)
         $category_slug = trim(get_transliterate($city_region));
         $region_category_id = search_id_category_by_slug($category_slug);
 
-        // $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
-
         $rooms = convert_json_to_array('/json/' . $key_city_region . '/room.json');
         $rooms_ids = [];
 
@@ -121,23 +119,6 @@ function start($is_continue_load = false)
             $finishings_ids[$type->_id] = $type->name;
         }
 
-        // $regions_names = array_column($regions, 'name');
-
-        // $args_cities = array(
-        //     'hide_empty' => false,
-        //     'parent' => $region_category_id ?? 0,
-        // );
-
-        // $categories_cities = get_categories($args_cities);
-
-        // $search_categories_cities = [];
-
-        // foreach ($categories_cities as $category_city) {
-        //     if (in_array($category_city->name, $regions_names)) {
-        //         $search_categories_cities[] = $category_city->term_id;
-        //     }
-        // }
-
         $post_map = get_post_map([$region_category_id]);
 
         $count_post = 0;
@@ -158,13 +139,12 @@ function start($is_continue_load = false)
 
         $rooms_ids = [];
         $rooms = [];
-        // $regions = [];
 
         if ($is_load) {
             get_message_server_telegram('Успех', 'Начало обновления цены ' . $key_city_region);
 
             $gk_map = get_gk_map($id_page_krai);
-            $post_map_categories = get_post_map_category([$region_category_id]);       
+            $post_map_categories = get_post_map_category([$region_category_id]);
 
             foreach ($gk_map as $gk_id) {
                 set_value_gk($gk_id, $post_map_categories);
@@ -184,28 +164,7 @@ function start($is_continue_load = false)
         $category_slug = trim(get_transliterate($city_region));
         $region_category_id = search_id_category_by_slug($category_slug);
 
-        // $regions = convert_json_to_array('/json/' . $key_city_region . '/regions.json');
-
-        // $regions_names = array_column($regions, 'name');
-
-        // $args_cities = array(
-        //     'hide_empty' => false,
-        //     'parent' => $region_category_id ?? 0,
-        // );
-
-        // $categories_cities = get_categories($args_cities);
-
-        // $search_categories_cities = [];
-
-        // foreach ($categories_cities as $category_city) {
-        //     if (in_array($category_city->name, $regions_names)) {
-        //         $search_categories_cities[] = $category_city->term_id;
-        //     }
-        // }
-
         $post_map = get_post_map_no_image([$region_category_id]);
-
-
 
         if (!empty($post_map)) {
             load_image($key_city_region, $post_map);
