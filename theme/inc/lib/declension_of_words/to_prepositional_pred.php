@@ -8,6 +8,7 @@ function to_prepositional_pred($str)
         'Сочи' => 'Сочи',
         'Петербург' => 'Петербурге',
         'Краснодар' => 'Краснодаре',
+        'Бибирево' => 'Бибирево'
     ];
 
     // Проверяем, есть ли слово в списке замен
@@ -20,8 +21,14 @@ function to_prepositional_pred($str)
         return $str . 'е';
     }
 
+    if (in_array(mb_substr($str, -2), ['ий', 'ый', 'ой'])) {
+        return mb_substr($str, 0, -2) . 'ом';
+    }
+
+
+
     // Если слово заканчивается на "а", "я" или "о", добавляем "е"
-    if (in_array(mb_substr($str, -1), ['а', 'я', 'о'])) {
+    if (in_array(mb_substr($str, -1), ['а', 'я'])) {
         return mb_substr($str, 0, -1, 'UTF-8') . 'е';
     }
 
@@ -33,5 +40,5 @@ function to_prepositional_pred($str)
         return $str . 'е';
     }
 
-    return $str . 'е';
+    return $str;
 }
