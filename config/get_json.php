@@ -26,7 +26,7 @@ function execute_with_retries($function_name, $max_attempts = 10)
 // execute_with_retries('my_custom_task');
 
 try {
-    start();
+//    start();
 } catch (Exception $e) {
     error_log('First attempt to start failed: ' . $e->getMessage());
     execute_with_retries('start'); // Повторный вызов с параметром true

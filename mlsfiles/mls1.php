@@ -127,7 +127,7 @@ class MLSReal
       if (isset($_POST['UPD'])) {
 
         if (isset($_POST['mlspage'])) $this->mlspage = intval($_POST['mlspage']);
-
+//var_dump($_POST);
         if (isset($_POST['mlsorder'])) {
           $this->mlsorder = $_POST['mlsorder'];
           $this->order = explode('&', $_POST['mlsorder'])[0];
@@ -176,6 +176,8 @@ class MLSReal
           $this->area_do = floatval($_POST['area_do']);
           $this->gets .= '&area_do=' . $this->area_do;
         }
+		
+		
         if (isset($_POST['price_ot'])) {
           $this->price_ot = floatval($_POST['price_ot']);
           $this->gets .= '&price_ot=' . $this->price_ot;
@@ -259,7 +261,7 @@ class MLSReal
 
 
       $where = '';
-      if ($whereS != '' || $whereR != '' || $whereM != '' || $this->stage != '') {
+      if ($whereS != '' || $whereR != '' || $whereM != '' || (isset($this->stage) && $this->stage != '')) {
         if ($whereS != '') $where .= 'RAIONID in (' . $whereS . ') AND ';
         if ($whereM != '') {
           foreach (explode(',', $whereM) as $rn) if (intval($rn) == 76) $where .= 'NOT WMATERID in (80,83,510,82,78) AND ';
@@ -311,6 +313,7 @@ class MLSReal
       $this->rc = mysqli_fetch_row(mysqli_query($this->dbcnx, 'select count(*) from APARTS' . $where));
       $this->rc = $this->rc[0];
       $content = mysqli_query($this->dbcnx, $this->sql_tetx . $where . $hav . ' order by ' . $ordering . ' ' . $this->direction . ' LIMIT ' . $this->realty_limit * ($this->mlspage - 1) . ',' . $this->realty_limit);
+//echo  $this->sql_tetx . $where . $hav . ' order by ' . $ordering . ' ' . $this->direction . ' LIMIT ' . $this->realty_limit * ($this->mlspage - 1) . ',' . $this->realty_limit;
       $contentMAP = mysqli_query($this->dbcnx, $this->sql_tetx . $where . $hav);
 
 
@@ -320,6 +323,7 @@ class MLSReal
 
       if ($this->filter == 1) {
         $sql_price = mysqli_query($this->dbcnx, 'select MIN(PRICE),MAX(PRICE) from APARTS where ' . (isset($this->stype) && $this->stype == 1 ? 'VARIANT=2' : 'VARIANT<>2') . ' and NEWBUILD=0 and WHAT=0 and COMPID=' . $this->agency);
+//echo 'select MIN(PRICE),MAX(PRICE) from APARTS where ' . (isset($this->stype) && $this->stype == 1 ? 'VARIANT=2' : 'VARIANT<>2') . ' and NEWBUILD=0 and WHAT=0 and COMPID=' . $this->agency;
         $dataPrice = mysqli_fetch_row($sql_price);
         $sql_area = mysqli_query($this->dbcnx, 'select MIN(AAREA),MAX(AAREA) from APARTS where ' . (isset($this->stype) && $this->stype == 1 ? 'VARIANT=2' : 'VARIANT<>2') . ' and NEWBUILD=0 and WHAT=0 and COMPID=' . $this->agency);
         $dataArea = mysqli_fetch_row($sql_area);
@@ -345,6 +349,7 @@ class MLSReal
     switch ($this->realty_type) {
       case 'stats':
         $this->echofilter($sql_city, $sql_raion, $whereS, $whereM, $whereR, $content, $contentMAP, round($dataPrice[0]), round($dataPrice[1]), round($dataArea[0]), round($dataArea[1]));
+		
         $this->createStats($content, $this->rc);
         break;
       case 'card':
@@ -446,8 +451,8 @@ class MLSReal
 
     <div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12 pl1 pr1 mt7">
        <strong>Площадь, м²</strong><span id="mlsArea"> от ' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . ' до ' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '</span><br />
-			<input type="hidden" id="area_ot" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : '') . '"/>
-			<input type="hidden" id="area_do" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : '') . '"/>
+			<input type="hidden" id="area_ot" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . '"/>
+			<input type="hidden" id="area_do" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '"/>
 			<div class="col-xs-12 mt1" id="slider-mlsArea"></div>
     </div>
 
@@ -489,8 +494,8 @@ class MLSReal
 
 	<div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12 mt7">
 		<strong>Цена, ₽</strong><span id="mlsPrice"> от ' . number_format((isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) / 1000, 3, ' ', ' ') . ' до ' . number_format((isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) / 1000, 3, ' ', ' ') . '</span><br />
-			<input type="hidden" id="price_ot" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : '') . '">
-			<input type="hidden" id="price_do" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : '') . '">
+			<input type="hidden" id="price_ot" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) . '">
+			<input type="hidden" id="price_do" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) . '">
 			<div class="col-xs-12 mt1" id="slider-mlsPrice"></div>
 	</div>
 	<script>
@@ -598,8 +603,8 @@ class MLSReal
             </div>
             <div class="ui-slider-title mt2 col-xs-12">
                <strong>Площадь, м²</strong><span id="mlsAreaM"> от ' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . ' до ' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '</span><br />
-        			<input type="hidden" id="area_otM" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : '') . '"/>
-        			<input type="hidden" id="area_doM" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : '') . '"/>
+        			<input type="hidden" id="area_otM" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . '"/>
+        			<input type="hidden" id="area_doM" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '"/>
         			<div class="col-xs-12 mt1" id="slider-mlsAreaM"></div>
             </div>
     	    <div class="ui-slider-title rooms_f mt2 col-xs-12">
@@ -639,8 +644,8 @@ class MLSReal
     	    </div>
         	<div class="ui-slider-title mt2 col-xs-12">
         		<strong>Цена, ₽</strong><span id="mlsPriceM"> от ' . number_format((isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) / 1000, 3, ' ', ' ') . ' до ' . number_format((isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) / 1000, 3, ' ', ' ') . '</span><br />
-        			<input type="hidden" id="price_otM" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : '') . '">
-        			<input type="hidden" id="price_doM" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : '') . '">
+        			<input type="hidden" id="price_otM" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) . '">
+        			<input type="hidden" id="price_doM" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) . '">
         			<div class="col-xs-12 mt1" id="slider-mlsPriceM"></div>
         	</div>
                     	<script>
