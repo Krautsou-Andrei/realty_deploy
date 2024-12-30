@@ -29,10 +29,10 @@ if ! grep -q "define( 'WP_REDIS_DATABASE', 1 );" /var/www/html/wp-config.php; th
     sed -i "6s/^/define( 'WP_REDIS_DATABASE', 1 );\n/" /var/www/html/wp-config.php
 fi
 
-sed -i 's/^pm.max_children = .*/pm.max_children = 30/' /usr/local/etc/php-fpm.d/www.conf
-sed -i 's/^pm.start_servers = .*/pm.start_servers = 16/' /usr/local/etc/php-fpm.d/www.conf
-sed -i 's/^pm.min_spare_servers = .*/pm.min_spare_servers = 8/' /usr/local/etc/php-fpm.d/www.conf
-sed -i 's/^pm.max_spare_servers = .*/pm.max_spare_servers = 16/' /usr/local/etc/php-fpm.d/www.conf
+sed -i 's/^pm.max_children = .*/pm.max_children = 10/' /usr/local/etc/php-fpm.d/www.conf
+sed -i 's/^pm.start_servers = .*/pm.start_servers = 8/' /usr/local/etc/php-fpm.d/www.conf
+sed -i 's/^pm.min_spare_servers = .*/pm.min_spare_servers = 4/' /usr/local/etc/php-fpm.d/www.conf
+sed -i 's/^pm.max_spare_servers = .*/pm.max_spare_servers = 8/' /usr/local/etc/php-fpm.d/www.conf
 
 # Завершаем выполнение скрипта, чтобы передать управление Docker
 
