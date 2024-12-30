@@ -448,8 +448,8 @@ class MLSReal
 
     <div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12 pl1 pr1 mt7">
        <strong>Площадь, м²</strong><span id="mlsArea"> от ' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . ' до ' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '</span><br />
-			<input type="hidden" id="area_ot" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : '') . '"/>
-			<input type="hidden" id="area_do" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : '') . '"/>
+			<input type="hidden" id="area_ot" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . '"/>
+			<input type="hidden" id="area_do" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '"/>
 			<div class="col-xs-12 mt1" id="slider-mlsArea"></div>
     </div>
 
@@ -491,8 +491,8 @@ class MLSReal
 
 	<div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12 mt7">
 		<strong>Цена, ₽</strong><span id="mlsPrice"> от ' . number_format((isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) / 1000, 3, ' ', ' ') . ' до ' . number_format((isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) / 1000, 3, ' ', ' ') . '</span><br />
-			<input type="hidden" id="price_ot" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : '') . '">
-			<input type="hidden" id="price_do" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : '') . '">
+			<input type="hidden" id="price_ot" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) . '">
+			<input type="hidden" id="price_do" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) . '">
 			<div class="col-xs-12 mt1" id="slider-mlsPrice"></div>
 	</div>
 	<script>

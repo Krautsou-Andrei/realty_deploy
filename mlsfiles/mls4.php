@@ -397,22 +397,22 @@ class MLSReal
 
     <div class="ui-slider-title mt2 col-xs-12">
        <strong>Площадь, м²</strong><span id="mlsAreaM"> от ' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . ' до ' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '</span><br />
-			<input type="hidden" id="area_otM" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : '') . '"/>
-			<input type="hidden" id="area_doM" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : '') . '"/>
+			<input type="hidden" id="area_otM" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . '"/>
+			<input type="hidden" id="area_doM" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '"/>
 			<div class="col-xs-12 mt1" id="slider-mlsAreaM"></div>
     </div>
 
     <div class="ui-slider-title mt2 col-xs-12">
        <strong>Участок, сот.</strong><span id="mlsEAreaM"> от ' . (isset($this->earea_ot) && $this->earea_ot > 0 ? $this->earea_ot : $dataEAreaMIN) . ' до ' . (isset($this->earea_do) && $this->earea_do > 0 ? $this->earea_do : $dataEAreaMAX) . '</span><br />
-			<input type="hidden" id="earea_otM" name="earea_ot" value="' . (isset($this->earea_ot) && $this->earea_ot > 0 ? $this->earea_ot : '') . '"/>
-			<input type="hidden" id="earea_doM" name="earea_do" value="' . (isset($this->earea_do) && $this->earea_do > 0 ? $this->earea_do : '') . '"/>
+			<input type="hidden" id="earea_otM" name="earea_ot" value="' . (isset($this->earea_ot) && $this->earea_ot > 0 ? $this->earea_ot : $dataEAreaMIN) . '"/>
+			<input type="hidden" id="earea_doM" name="earea_do" value="' . (isset($this->earea_do) && $this->earea_do > 0 ? $this->earea_do : $dataEAreaMAX) . '"/>
 			<div class="col-xs-12 mt1" id="slider-mlsEAreaM"></div>
     </div>
 
 	<div class="ui-slider-title mt2 col-xs-12">
 		<strong>Цена, ₽</strong><span id="mlsPriceM"> от ' . number_format((isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) / 1000, 3, ' ', ' ') . ' до ' . number_format((isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) / 1000, 3, ' ', ' ') . '</span><br />
-			<input type="hidden" id="price_otM" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : '') . '">
-			<input type="hidden" id="price_doM" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : '') . '">
+			<input type="hidden" id="price_otM" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) . '">
+			<input type="hidden" id="price_doM" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) . '">
 			<div class="col-xs-12 mt1" id="slider-mlsPriceM"></div>
 	</div>
 	<script>
@@ -524,22 +524,22 @@ class MLSReal
 
     <div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12 pl1 pr1">
        <strong>Площадь, м²</strong><span id="mlsArea"> от ' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . ' до ' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '</span><br />
-			<input type="hidden" id="area_ot" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : '') . '"/>
-			<input type="hidden" id="area_do" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : '') . '"/>
+			<input type="hidden" id="area_ot" name="area_ot" value="' . (isset($this->area_ot) && $this->area_ot > 0 ? $this->area_ot : $dataAreaMIN) . '"/>
+			<input type="hidden" id="area_do" name="area_do" value="' . (isset($this->area_do) && $this->area_do > 0 ? $this->area_do : $dataAreaMAX) . '"/>
 			<div class="col-xs-12 mt1" id="slider-mlsArea"></div>
     </div>
 
     <div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12 pl1 pr1">
        <strong>Участок, сот.</strong><span id="mlsEArea"> от ' . (isset($this->earea_ot) && $this->earea_ot > 0 ? $this->earea_ot : $dataEAreaMIN) . ' до ' . (isset($this->earea_do) && $this->earea_do > 0 ? $this->earea_do : $dataEAreaMAX) . '</span><br />
-			<input type="hidden" id="earea_ot" name="earea_ot" value="' . (isset($this->earea_ot) && $this->earea_ot > 0 ? $this->earea_ot : '') . '"/>
-			<input type="hidden" id="earea_do" name="earea_do" value="' . (isset($this->earea_do) && $this->earea_do > 0 ? $this->earea_do : '') . '"/>
+			<input type="hidden" id="earea_ot" name="earea_ot" value="' . (isset($this->earea_ot) && $this->earea_ot > 0 ? $this->earea_ot : $dataEAreaMIN) . '"/>
+			<input type="hidden" id="earea_do" name="earea_do" value="' . (isset($this->earea_do) && $this->earea_do > 0 ? $this->earea_do : $dataEAreaMAX) . '"/>
 			<div class="col-xs-12 mt1" id="slider-mlsEArea"></div>
     </div>
 
 	<div class="ui-slider-title op10 col-lg-3 col-md-4 col-sm-6 col-xs-12">
 		<strong>Цена, ₽</strong><span id="mlsPrice"> от ' . number_format((isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) / 1000, 3, ' ', ' ') . ' до ' . number_format((isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) / 1000, 3, ' ', ' ') . '</span><br />
-			<input type="hidden" id="price_ot" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : '') . '">
-			<input type="hidden" id="price_do" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : '') . '">
+			<input type="hidden" id="price_ot" name="price_ot" value="' . (isset($this->price_ot) && $this->price_ot > 0 ? $this->price_ot : $dataPriceMIN) . '">
+			<input type="hidden" id="price_do" name="price_do" value="' . (isset($this->price_do) && $this->price_do > 0 ? $this->price_do : $dataPriceMAX) . '">
 			<div class="col-xs-12 mt1" id="slider-mlsPrice"></div>
 	</div>
 	<script>
