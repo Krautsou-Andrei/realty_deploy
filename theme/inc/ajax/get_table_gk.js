@@ -10,10 +10,25 @@ jQuery(document).ready(function ($) {
       FORM_INPUT: "[data-form-table-input]",
       FORM_LITER: "[data-form-table-liter]",
       INPUT_TABLE_PARAMS: "[data-input-table-params]",
+      LOADER: "[data-loader]",
     };
 
     const inputTableParams = $(SELECTORS.INPUT_TABLE_PARAMS);
     const inputTableParamsValue = $(SELECTORS.INPUT_TABLE_PARAMS).val();
+
+    function blockScroll() {
+      $("body").css({
+        overflow: "hidden",
+        height: "100%",
+      });
+    }
+
+    function unblockScroll() {
+      $("body").css({
+        overflow: "auto",
+        height: "auto",
+      });
+    }
 
     $(SELECTORS.FORM_INPUT).change(function () {
       const formTableLiter = $(SELECTORS.FORM_LITER).serializeArray();
@@ -28,6 +43,11 @@ jQuery(document).ready(function ($) {
 
       const currentLiter = formTableLiter[0]?.value;
       const container_table = $(SELECTORS.CONTAINER_TABLE);
+      const loader = $(SELECTORS.LOADER);
+
+      loader.addClass("active");
+      loader.show();
+      blockScroll();
 
       $.ajax({
         url: ajax_object.ajaxurl,
@@ -60,6 +80,9 @@ jQuery(document).ready(function ($) {
         },
         complete: function () {
           initializeFormFilter();
+          loader.removeClass("active");
+          loader.hide();
+          unblockScroll();
           new NewTooltip();
         },
       });
