@@ -53,6 +53,7 @@ get_header();
         }
 
         $params_map = [
+            'region' => $filter_region,
             'city' => $filter_city,
             'coordinates_center' => isset($locations[0]) ? $locations[0]['coordinates'] : [],
             'locations' => $locations,

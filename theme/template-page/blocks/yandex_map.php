@@ -1,5 +1,7 @@
 <?php
 
+
+
 $default_coordinates = [];
 $latitude =  carbon_get_post_meta(5, 'crb_contact_location_width');
 $longitude = carbon_get_post_meta(5, 'crb_contact_location_longitude');
@@ -7,6 +9,11 @@ if ($latitude && $longitude) {
     $default_coordinates = [$latitude, $longitude];
 }
 
+global $names_yandex_map_region;
+
+
+
+$region = isset($args['region']) ? $args['region'] : 'Краснодарский край';
 $city = isset($args['city']) ? json_encode($args['city']) : json_encode('Новороссийск');
 $coordinates = isset($args['coordinates']) ? (json_encode($args['coordinates'])) : '[]';
 $coordinates_center = !empty($args['coordinates_center']) ? (json_encode($args['coordinates_center'])) : json_encode($default_coordinates);
@@ -106,16 +113,16 @@ $zoom = isset($args['zoom']) ? $args['zoom'] : 16;
 
                 myMap.geoObjects.add(objectManager);
 
+
                 jQuery(document).ready(function($) {
                     function handleCheckboxChange() {
                         $(".map_select_checkbox").each(function() {
                             objectManager.removeAll();
                             if ($(this).is(":checked")) {
-                                var city = <?php echo $city ?>;
-                                var citySlug = (city === "Новороссийск") ? "novoross" : "krasnodar";
+                                var regionSlug = '<?php echo $names_yandex_map_region[$region] ?>';
 
-                                if (citySlug !== "") {
-                                    var url = "/map/" + citySlug + "/" + $(this).val() + ".json";
+                                if (regionSlug !== "") {
+                                    var url = "/map/" + regionSlug + "/" + $(this).val() + ".json";
                                     $.get(url).done(function(data) {
                                         objectManager.add(data);
                                     }).fail(function(jqXHR, textStatus, errorThrown) {
