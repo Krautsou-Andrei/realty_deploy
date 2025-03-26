@@ -1229,17 +1229,21 @@ class MLSReal
                         </button>
                         </div>
                          <script>
-                          function setLink(event, obj, type) {
-                            if (event.target.innerText === "Перезвоните мне") {
-                                const formSeven = document.querySelector("[data-form-callback]");
-                                if (formSeven) {
-                                    const input = formSeven.querySelector(`input[name=your-link]`);   
-                                    const currentURL = window.location.origin;
-                                    const newURL = `${currentURL}/${type}/${obj}`;    
-                                    input.value = `${newURL}`;                                  
-                                }
-                            }
-                          }
+                           function setLink(event, obj, type) {
+                                                    if (event.target.innerText === "Перезвоните мне") {
+                                                        const formSeven = document.querySelectorAll("[data-form-callback]");
+                                                        if (formSeven && formSeven.length > 0) {
+                                                            const currentURL = window.location.origin;
+                                                            const newURL = `${currentURL}/${type}/${obj}`;
+
+                                                            formSeven.forEach(form => {
+                                                                const input = form.querySelector(`input[name=your-link]`);
+                                                                if (input) {
+                                                                    input.value = newURL; // Устанавливаем значение для каждого input
+                                                                }
+                                                            });
+                                                        }
+                                                    }
                       </script>
                     </div>
                 </article>

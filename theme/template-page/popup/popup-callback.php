@@ -35,10 +35,15 @@ $link_page = get_permalink(get_the_ID());
   </div>
 </div>
 <script>
-  const formSeven = document.querySelector('[data-form-callback]');
+  const formSeven = document.querySelectorAll('[data-form-callback]');
 
-  if (formSeven) {
-    const input = formSeven.querySelector(`input[name=your-link]`);
-    input.value = "<?php echo esc_js($link_page); ?>";
+  if (formSeven && formSeven.length > 0) {
+    formSeven.forEach(form => {
+      const input = form.querySelector(`input[name=your-link]`);
+      if (input) {
+        input.value = "<?php echo esc_js($link_page); ?>";
+      }
+    })
+
   }
 </script>

@@ -98,12 +98,19 @@ function category_card($author, $option_category_card)
                                 window.location.href = newURL;
                             }
                               if(event.target.innerText === "Перезвоните мне"){
-                              const formSeven = document.querySelector("[data-form-callback]");
+                              const formSeven = document.querySelectorAll("[data-form-callback]");
 
-                                if (formSeven) {
-                                const input = formSeven.querySelector(`input[name=your-link]`);
-                                input.value = `${newURL}`;                              
-                                }
+                                    if (formSeven.length > 0) {
+                                        const currentURL = window.location.origin; // Предположим, вы уже определили currentURL
+                                        const newURL = `${currentURL}/${type}/${obj}`; // Предположим, type и obj определены
+
+                                        formSeven.forEach(form => {
+                                            const input = form.querySelector(`input[name=your-link]`);
+                                            if (input) {
+                                                input.value = newURL; // Устанавливаем значение для каждого input
+                                            }
+                                        });
+                                    }
                               }  
                             
                         }

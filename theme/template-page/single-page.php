@@ -80,7 +80,7 @@ require_once get_template_directory() . '/inc/lib/get_image_url.php';
                 'coordinates_center' => [$product_latitude, $product_longitude],
               ];
 
-              ?>             
+              ?>
               <a class="button-back" href="javascript:void(0);" onclick="window.history.back();" aria-label="Назад"></a>
               <h1 class=" title--xl title--catalog title--singe-page"><?php echo $product_title ?></h1>
             </div>
@@ -404,11 +404,16 @@ require_once get_template_directory() . '/inc/lib/get_image_url.php';
                     function setLink(event, link) {
 
                       if (event.target.innerText === "Перезвоните мне") {
-                        const formSeven = document.querySelector('[data-form-callback]');
+                        const formSeven = document.querySelectorAll('[data-form-callback]');
 
-                        if (formSeven) {
-                          const input = formSeven.querySelector(`input[name=your-link]`);
-                          input.value = `${link}`;
+                        if (formSeven && formSeven.length > 0) {
+                          formSeven.forEach(form => {
+                            const input = form.querySelector(`input[name=your-link]`);
+                            if (input) {
+                              input.value = `${link}`;
+                            }
+                          })
+
                         }
                       }
                     }
