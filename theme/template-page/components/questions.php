@@ -13,7 +13,7 @@
         ?>
         <h2 class="questions__title title--xl title--questions"><?php echo $crb_questions_title ?></h2>
         <p class="questions__subtitle title--lg subtitle--questions"><?php echo $crb_questions_subtitle ?></p>
-        <div class="wp-block-contact-form-7-contact-form-selector">
+        <div class="wp-block-contact-form-7-contact-form-selector" data-form-callback>
           <div class="wpcf7 js" id="wpcf7-f525-p41-o1" lang="ru-RU" dir="ltr">
             <div class="screen-reader-response">
               <p role="status" aria-live="polite" aria-atomic="true">При отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.</p>
