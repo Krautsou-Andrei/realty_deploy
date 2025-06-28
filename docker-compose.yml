@@ -73,8 +73,8 @@ services:
     container_name: webserver
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:80"
+      # - "443:443"
     volumes:
       - ./nginx-conf:/etc/nginx/conf.d
       - "./.srv/realty:/var/www/html"
@@ -84,7 +84,7 @@ services:
       - "./uploads/:/var/www/html/wp-content/uploads"
       - "./theme/:/var/www/html/wp-content/themes/realty"
       - "./plugins/:/var/www/html/wp-content/plugins"
-      - certbot-etc:/etc/letsencrypt
+      # - certbot-etc:/etc/letsencrypt
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -98,18 +98,18 @@ services:
       PMA_HOST: db
       UPLOAD_LIMIT: 1512M
 
-  certbot:
-    depends_on:
-      - webserver
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - "./.srv/realty:/var/www/html"
-      - "./assets/:/var/www/html/assets"
-      - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini"
-      - "./theme/:/var/www/html/wp-content/themes/realty"
-    command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --force-renewal -d obj-estate.ru -d www.obj-estate.ru
+  # certbot:
+  #   depends_on:
+  #     - webserver
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - certbot-etc:/etc/letsencrypt
+  #     - "./.srv/realty:/var/www/html"
+  #     - "./assets/:/var/www/html/assets"
+  #     - "./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini"
+  #     - "./theme/:/var/www/html/wp-content/themes/realty"
+  #   command: certonly --webroot --webroot-path=/var/www/html --email andreikrautsougit@yandex.ru --agree-tos --no-eff-email --force-renewal -d obj-estate.ru -d www.obj-estate.ru
 
-volumes:
-  certbot-etc:
+# volumes:
+#   certbot-etc:
